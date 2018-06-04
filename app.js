@@ -49,8 +49,7 @@ app.get("/", (request, response) => {
 app.get("/:id", (request, response) => {
     var cohortId = findById(students, request.params.id);
     if (!cohortId) {
-        response.status = 404
-        response.json({
+        response.status(404).json({
             error: {
                 message: "No record found!"
             }
